@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <title>SHARE EAT</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+
+  <link rel="stylesheet" href="./styles/geral.css">
+  <link rel="stylesheet" href="./styles/places.css">
+</head>
+
+<body>
+
+  <div class="external">
+    <header class="header">
+      <img src="./images/Grupo 2022.svg" alt="">
+    </header>
+    <div class="page">
+      <h1 class="title">Lugares</h1>
+      <span class="subtitle"></span>
+      <div class="item-container row"></div>
+    </div>
+  </div>
+
+  <script src="info.js"></script>
+  <script>
+    
+
+    var text = '';
+    content.forEach(element => {
+      text += `
+      <div class="item-list col-sm-6 col-lg-4">
+          <a class="box-list" href="detalhes-lugar.html?name=${element.name}">
+            <h3 class="item-list-name">${element.name}</h3>
+            <p class="item-list-subtitle">${element.menuItens.length} pratos</p>
+          </a>
+          <a href="formulario.html?name=${element.name}">
+            <div class="icon-box">
+              <img class="add-icon" src="./images/ic_add_white.svg" alt="">
+            </div>
+          </a>
+        </div>
+        `
+    });
+
+    document.querySelector('.item-container').innerHTML = text;
+    document.querySelector('.subtitle').innerHTML = content.length + ' lugares cadastrados';
+
+  </script>
+
+</body>
+
+</html>

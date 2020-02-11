@@ -1,0 +1,47 @@
+body {
+    background-image: url('../images/Grupo\ 1927.svg');
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
+.item-container {
+    padding-top: 15px;
+}
+
+.item-list {
+    margin-bottom: 25px;
+}
+
+.box-list {
+    background-color: #333333;
+    box-shadow: 0px 4px 16px #00000029;
+    border-radius: 8px;
+    color: #fff;
+    display: inline-block;
+    width: 79%;
+    padding: 12px 17px;
+}
+
+.item-list-name {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.item-list-subtitle {
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 300;
+}
+
+.add-icon {
+    border: 1px solid #fff;
+    border-radius: 100%;
+    padding: 10px;
+    margin: 0 auto;
+    display: block;
+}
+
+.icon-box {
+    display: inline-block;
+    width: 19%;
+}

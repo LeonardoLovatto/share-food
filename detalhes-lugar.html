@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>SHARE EAT</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="./styles/geral.css">
+    <link rel="stylesheet" href="./styles/detalhes.css">
+</head>
+
+<body>
+
+    <div class="external">
+        <header class="header">
+            <a href="./index.html">
+                <span class="return-btn">
+                    <</span>
+            </a>
+            <img src="./images/Grupo 2022.svg" alt="">
+        </header>
+        <div class="page">
+            <h1 class="title"></h1>
+            <span class="subtitle">23 pratos</span>
+            <div class="item-container row">
+                
+            </div>
+            <a href="formulario.html" id="add-icon">
+                <div class="icon-box">
+                    <img class="add-icon" src="./images/ic_add_black.svg" alt="">
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <script src="info.js"></script>
+    <script>
+
+        var url = new URL(window.location.href);
+        var name = url.searchParams.get("name");
+
+        let itens = getMenuItensByName(name);
+        let text = '';
+        itens.forEach(element => {
+            text += `
+                <div class="item-list col-sm-6 col-lg-4">
+                    <a class="box-list" href="#">
+                        <div class="title-section">
+                            <h3 class="item-list-name">${element.name}</h3>
+                            <h3 class="item-list-price">R$ ${element.price.toFixed(2).replace('.',',')}</h3>
+                        </div>
+                        <p class="item-list-subtitle">${element.description}</p>
+                    </a>
+                </div>
+        `
+        });
+
+        document.getElementById('add-icon').href = 'formulario.html?name=' + name;
+        document.querySelector('h1.title').innerHTML = name;
+        document.querySelector('.item-container').innerHTML = text;
+        document.querySelector('.subtitle').innerHTML = itens.length + ' pratos';
+
+    </script>
+</body>
+
+</html>

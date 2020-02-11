@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>SHARE EAT</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./styles/geral.css">
+    <link rel="stylesheet" href="./styles/formulario.css">
+</head>
+
+<body>
+
+    <div class="external">
+        <header class="header">
+            <a href="./index.html">
+                <span class="return-btn">
+                    <</span>
+            </a>
+            <img src="./images/Grupo 2022.svg" alt="">
+        </header>
+        <div class="page">
+            <h1 class="title">Silva Lanches</h1>
+            <div class="item-container">
+                <div class="item-list">
+                    <form action="">
+                        <div class="input-container">
+                            <div class="subtitle">Nome do prato</div>
+                            <input type="text" class="form-control" placeholder="Prato">
+                        </div>
+                        <div class="input-container">
+                            <div class="subtitle">Valor</div>
+                            <input type="text" class="form-control" placeholder="R$ 0,00">
+                        </div>
+                        <div class="input-container">
+                            <div class="subtitle">Descrição do prato</div>
+                            <textarea type="text" maxlength="200" class="form-control" placeholder="Insira uma descrição"></textarea>
+                        </div>
+                        <div class="subtitle">*A descrição deve conter até 200 caracteres.</div>
+                        <button class="btn" type="reset">Salvar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var url_string = window.location.href;
+        var url = new URL(url_string);
+        var c = url.searchParams.get("name");
+
+        var a = document.querySelector('h1.title').innerHTML = c;    
+    </script>
+</body>
+
+</html>
